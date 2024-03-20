@@ -13,11 +13,11 @@ const NavBar = () => {
   ];
 
   return (
-    <nav>
+    <nav className="p-6">
       <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
         {open === true ? <RiCloseCircleLine /> : <RiMenu2Fill />}
       </div>
-      <ul className="md:flex">
+      <ul className={`md:flex absolute md:static px-6 duration-1000 ${open ? 'top-16' : '-top-60'}`}>
         {routes.map((route) => (
           <Link key={route.id} route={route}></Link>
         ))}
